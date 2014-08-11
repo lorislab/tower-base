@@ -81,6 +81,12 @@ public class BuildMojo extends AbstractMojo {
     protected String releaseBuild;
 
     /**
+     * The project version.
+     */
+    @Parameter( defaultValue = "${project.version}" )
+    protected String projectVersion;
+    
+    /**
      * The output directory.
      */
     @Parameter( defaultValue = "${project.build.directory}/${project.build.finalName}")
@@ -125,6 +131,12 @@ public class BuildMojo extends AbstractMojo {
             properties.put(PrmConstant.MAVEN_ARTIFACT_ID, project.getArtifactId());
             properties.put(PrmConstant.MAVEN_VERSION, project.getVersion());
             
+            // add the project version
+            if (projectVersion == null || projectVersion.isEmpty()) {
+                projectVersion = project.getVersion();
+            }
+            properties.put(PrmConstant.PROJECT_VERSION, projectVersion);
+            
             Date date = new Date();
             properties.put(PrmConstant.RELEASE_DATE, String.valueOf(date.getTime()));
             
@@ -152,7 +164,7 @@ public class BuildMojo extends AbstractMojo {
             OutputStream out = null;
             try {
                 out = new FileOutputStream( file );
-                properties.store(out, "Application release monitor descriptor");
+                properties.store(out, "Tower project release model descriptor");
             } finally {
                 if (out != null) {
                     out.close();
@@ -160,7 +172,7 @@ public class BuildMojo extends AbstractMojo {
             }
             
         } catch (IOException ex) {
-            throw new MojoExecutionException("Error creating the tower.properties file", ex);
+            throw new MojoExecutionException("Error creating the prm.properties file", ex);
         }
     }
     

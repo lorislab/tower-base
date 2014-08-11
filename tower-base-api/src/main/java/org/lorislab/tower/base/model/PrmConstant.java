@@ -70,5 +70,10 @@ public interface PrmConstant {
     /**
      * The key.
      */
-    public static final String RELEASE_KEY = "Release-Key";    
+    public static final String RELEASE_KEY = "Release-Key";  
+    
+    /**
+     * The project version parameter.
+     */
+    public static final String PROJECT_VERSION = "Project-Version";    
 }

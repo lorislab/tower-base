@@ -60,6 +60,10 @@ public class Prm implements Serializable {
      */
     private String key;
     /**
+     * The project version.
+     */
+    private String projectVersion;
+    /**
      * The other parameters.
      */
     private Map<String, String> other = new HashMap<>();
@@ -206,6 +210,24 @@ public class Prm implements Serializable {
      */
     public void setKey(String key) {
         this.key = key;
+    }
+
+    /**
+     * Gets the project version.
+     *
+     * @return the project version.
+     */
+    public String getProjectVersion() {
+        return projectVersion;
+    }
+
+    /**
+     * Sets project version.
+     *
+     * @param projectVersion the project version.
+     */
+    public void setProjectVersion(String projectVersion) {
+        this.projectVersion = projectVersion;
     }
 
 }

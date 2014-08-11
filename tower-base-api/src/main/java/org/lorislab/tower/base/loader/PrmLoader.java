@@ -33,7 +33,7 @@ import org.lorislab.tower.base.model.Prm;
 import org.lorislab.tower.base.model.PrmConstant;
 
 /**
- * The bridge model loader.
+ * The project release model loader.
  *
  * @author Andrej Petras
  */
@@ -62,10 +62,10 @@ public class PrmLoader {
     }
 
     /**
-     * Creates the ARM model from the properties.
+     * Creates the project release model from the properties.
      *
      * @param properties the properties.
-     * @return the corresponding ARM model.
+     * @return the corresponding project release model.
      */
     public static Prm create(Properties properties) {
         Prm result = new Prm();
@@ -79,7 +79,8 @@ public class PrmLoader {
         result.setScm((String) properties.remove(PrmConstant.RELEASE_SCM));
         result.setBuild((String) properties.remove(PrmConstant.RELEASE_BUILD));
         result.setKey((String) properties.remove(PrmConstant.RELEASE_KEY));
-
+        result.setProjectVersion((String) properties.remove(PrmConstant.PROJECT_VERSION));
+        
         // add release date
         String tmp = (String) properties.remove(PrmConstant.RELEASE_DATE);
         Date date = new Date(Long.valueOf(tmp));
@@ -94,9 +95,9 @@ public class PrmLoader {
     }
 
     /**
-     * Creates the properties from the ARM model.
+     * Creates the properties from the project release model.
      *
-     * @param arm the ARM model.
+     * @param arm the project release model.
      * @return the corresponding properties.
      */
     public static Properties createProperties(Prm arm) {

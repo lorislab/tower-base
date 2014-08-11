@@ -59,12 +59,13 @@ public final class ObjectConverter {
             // add maven attributes
             version.groupId = prm.getGroupId();
             version.artifactId = prm.getArtifactId();
-            version.version = prm.getVersion();
-
+            version.version = prm.getVersion();            
+            
             // add release attribtues
             version.scm = prm.getScm();
             version.build = prm.getBuild();
-
+            version.project = prm.getProjectVersion();
+            
             // add ARM other attributes
             version.other = prm.getOther();
         }

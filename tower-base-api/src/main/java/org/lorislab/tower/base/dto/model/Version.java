@@ -65,7 +65,11 @@ public class Version {
     /**
      * The key.
      */
-    public String key;    
+    public String key;   
+    /**
+     * The project version.
+     */
+    public String project;
     /**
      * The other parameters.
      */
