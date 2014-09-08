@@ -3,16 +3,16 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>org.lorislab.tower-base</groupId>
+		<groupId>org.lorislab.tower</groupId>
 		<artifactId>tower-base</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>../</relativePath>
 	</parent>
 	
-	<artifactId>tower-base-maven-plugin</artifactId>
+	<artifactId>tower-maven-plugin</artifactId>
 	<packaging>maven-plugin</packaging>	
-	<name>tower-base-maven-plugin</name>
-	<description>The tower-base maven plugin</description>
+	<name>tower-maven-plugin</name>
+	<description>The tower maven plugin</description>
 
 	<prerequisites>
 		<maven>2.2.1</maven>
@@ -20,13 +20,13 @@
 	
 	<dependencies>
 		<dependency>
-			<groupId>org.lorislab.tower-base</groupId>
+			<groupId>org.lorislab.tower</groupId>
 			<artifactId>tower-base-api</artifactId>
 			<version>${project.version}</version>
 			<type>jar</type>
 		</dependency>
 		<dependency>
-			<groupId>org.lorislab.tower-base</groupId>
+			<groupId>org.lorislab.tower</groupId>
 			<artifactId>tower-base-server-rs</artifactId>
 			<version>${project.version}</version>
 			<type>jar</type>

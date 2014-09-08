@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
     
 	<parent>
-		<groupId>org.lorislab.tower-base</groupId>
+		<groupId>org.lorislab.tower</groupId>
 		<artifactId>tower-base</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>../</relativePath>

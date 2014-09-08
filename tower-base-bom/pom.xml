@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
     
 	<parent>
-		<groupId>org.lorislab.tower-base</groupId>
+		<groupId>org.lorislab.tower</groupId>
 		<artifactId>tower-base</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>../</relativePath>
@@ -16,19 +16,20 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>org.lorislab.tower-base</groupId>
+				<groupId>org.lorislab.tower</groupId>
 				<artifactId>tower-base-api</artifactId> 
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.lorislab.tower-base</groupId>
+				<groupId>org.lorislab.tower</groupId>
 				<artifactId>tower-base-server-rs</artifactId> 
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.lorislab.tower-base</groupId>
-				<artifactId>tower-base-maven-plugin</artifactId> 
+				<groupId>org.lorislab.tower</groupId>
+				<artifactId>tower-maven-plugin</artifactId> 
 				<version>${project.version}</version>
+				<type>maven-plugin</type>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
