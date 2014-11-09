@@ -157,7 +157,7 @@ public abstract class AbstractMonitorMojo extends AbstractMojo {
                     if (bridge.getDate() != null && bridge.getKey() != null) {
                         version = ObjectConverter.create();
                         ObjectConverter.update(version, bridge);
-                        version.manifest = map;
+                        version.setManifest(map);
                     }
                 }
             } catch (MalformedURLException ex) {

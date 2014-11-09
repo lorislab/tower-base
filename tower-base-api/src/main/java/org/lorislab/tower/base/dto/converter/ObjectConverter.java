@@ -40,7 +40,7 @@ public final class ObjectConverter {
      */
     public static Version create() {
         Version result = new Version();
-        result.uid = UUID.randomUUID().toString();
+        result.setUid(UUID.randomUUID().toString());
         return result;
     }
 
@@ -53,21 +53,21 @@ public final class ObjectConverter {
      */
     public static Version update(Version version, Prm prm) {
         if (prm != null && version != null) {
-            version.date = prm.getDate();
-            version.key = prm.getKey();
+            version.setDate(prm.getDate());
+            version.setKey(prm.getKey());
             
             // add maven attributes
-            version.groupId = prm.getGroupId();
-            version.artifactId = prm.getArtifactId();
-            version.version = prm.getVersion();            
+            version.setGroupId(prm.getGroupId());
+            version.setArtifactId(prm.getArtifactId());
+            version.setVersion(prm.getVersion());            
             
             // add release attribtues
-            version.scm = prm.getScm();
-            version.build = prm.getBuild();
-            version.project = prm.getProjectVersion();
+            version.setScm(prm.getScm());
+            version.setBuild(prm.getBuild());
+            version.setProject(prm.getProjectVersion());
             
             // add ARM other attributes
-            version.other = prm.getOther();
+            version.setOther(prm.getOther());
         }
         return version;
     }

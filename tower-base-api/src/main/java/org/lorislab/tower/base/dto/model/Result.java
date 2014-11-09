@@ -13,24 +13,59 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.lorislab.tower.base.dto.model;
 
 import org.lorislab.tower.base.dto.model.enums.Status;
 
 /**
  * The result message.
- * 
+ *
  * @author Andrej Petras
  */
 public class Result {
-   
+
     /**
      * The message.
      */
-    public String message;
+    private String message;
     /**
      * The status.
      */
-    public Status status;
+    private Status status;
+
+    /**
+     * Gets the message.
+     *
+     * @return the message.
+     */
+    public String getMessage() {
+        return message;
+    }
+
+    /**
+     * Sets the message.
+     *
+     * @param message the message.
+     */
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    /**
+     * Gets the status.
+     *
+     * @return the status.
+     */
+    public Status getStatus() {
+        return status;
+    }
+
+    /**
+     * Sets the status.
+     *
+     * @param status the status.
+     */
+    public void setStatus(Status status) {
+        this.status = status;
+    }
 }

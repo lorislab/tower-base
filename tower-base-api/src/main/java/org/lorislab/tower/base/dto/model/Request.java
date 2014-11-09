@@ -13,24 +13,59 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.lorislab.tower.base.dto.model;
 
 /**
  * The request.
- * 
+ *
  * @author Andrej Petras
  */
 public class Request {
-    
+
     /**
      * The version.
      */
-    public Version version;
-    
+    private Version version;
+
     /**
      * The key.
      */
-    public String key;
-    
+    private String key;
+
+    /**
+     * Gets the key.
+     *
+     * @return the key.
+     */
+    public String getKey() {
+        return key;
+    }
+
+    /**
+     * Sets the key.
+     *
+     * @param key the key.
+     */
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    /**
+     * Gets the version.
+     *
+     * @return the version.
+     */
+    public Version getVersion() {
+        return version;
+    }
+
+    /**
+     * Sets the version.
+     *
+     * @param version the version.
+     */
+    public void setVersion(Version version) {
+        this.version = version;
+    }
+
 }

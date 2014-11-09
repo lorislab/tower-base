@@ -29,53 +29,288 @@ public class Version {
     /**
      * The UID of the request.
      */
-    public String uid;
+    private String uid;
     /**
      * The version.
      */
-    public int ver = 1;
+    private int ver = 1;
     /**
      * The build date.
      */
-    public Date date;
+    private Date date;
     /**
      * The service name.
      */
-    public String service;
+    private String service;
     /**
      * The MAVEN group id.
      */
-    public String groupId;
+    private String groupId;
     /**
      * The MAVEN artifact id.
      */
-    public String artifactId;
+    private String artifactId;
     /**
      * The MAVEN version.
      */
-    public String version;
+    private String version;
     /**
      * The SCM.
      */
-    public String scm;
+    private String scm;
     /**
      * The build.
      */
-    public String build;
+    private String build;
     /**
      * The key.
      */
-    public String key;   
+    private String key;
     /**
      * The project version.
      */
-    public String project;
+    private String project;
     /**
      * The other parameters.
      */
-    public Map<String, String> other = new HashMap<>();
+    private Map<String, String> other = new HashMap<>();
     /**
      * The manifest.
      */
-    public Map<String, String> manifest = new HashMap<>();
+    private Map<String, String> manifest = new HashMap<>();
+
+    /**
+     * Gets the UID.
+     *
+     * @return the UID.
+     */
+    public String getUid() {
+        return uid;
+    }
+
+    /**
+     * Sets the UID.
+     *
+     * @param uid the UID to set
+     */
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    /**
+     * Gets the version of the request.
+     *
+     * @return the version of the request.
+     */
+    public int getVer() {
+        return ver;
+    }
+
+    /**
+     * Sets the version of the request.
+     *
+     * @param ver the version of the request.
+     */
+    public void setVer(int ver) {
+        this.ver = ver;
+    }
+
+    /**
+     * Gets the date.
+     *
+     * @return the date.
+     */
+    public Date getDate() {
+        return date;
+    }
+
+    /**
+     * Sets the date.
+     *
+     * @param date the date to set.
+     */
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    /**
+     * Gets the service.
+     *
+     * @return the service.
+     */
+    public String getService() {
+        return service;
+    }
+
+    /**
+     * Sets the service.
+     *
+     * @param service the service to set.
+     */
+    public void setService(String service) {
+        this.service = service;
+    }
+
+    /**
+     * Gets the group ID.
+     *
+     * @return the group ID.
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    /**
+     * Sets the group ID.
+     *
+     * @param groupId the group ID.
+     */
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
+    /**
+     * Gets the artifact ID.
+     *
+     * @return the artifact ID.
+     */
+    public String getArtifactId() {
+        return artifactId;
+    }
+
+    /**
+     * Sets the artifact ID.
+     *
+     * @param artifactId the artifact ID.
+     */
+    public void setArtifactId(String artifactId) {
+        this.artifactId = artifactId;
+    }
+
+    /**
+     * Gets the version.
+     *
+     * @return the version.
+     */
+    public String getVersion() {
+        return version;
+    }
+
+    /**
+     * Sets the version.
+     *
+     * @param version the version.
+     */
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    /**
+     * Gets the SCM.
+     *
+     * @return the SCM.
+     */
+    public String getScm() {
+        return scm;
+    }
+
+    /**
+     * Sets the SCM.
+     *
+     * @param scm the SCM.
+     */
+    public void setScm(String scm) {
+        this.scm = scm;
+    }
+
+    /**
+     * Gets the build.
+     *
+     * @return the build.
+     */
+    public String getBuild() {
+        return build;
+    }
+
+    /**
+     * Sets the build.
+     *
+     * @param build the build.
+     */
+    public void setBuild(String build) {
+        this.build = build;
+    }
+
+    /**
+     * Gets the key.
+     *
+     * @return the key.
+     */
+    public String getKey() {
+        return key;
+    }
+
+    /**
+     * Sets the key.
+     *
+     * @param key the key.
+     */
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    /**
+     * Gets the project.
+     *
+     * @return the project.
+     */
+    public String getProject() {
+        return project;
+    }
+
+    /**
+     * Sets the project.
+     *
+     * @param project the project.
+     */
+    public void setProject(String project) {
+        this.project = project;
+    }
+
+    /**
+     * Gets the other parameters.
+     *
+     * @return the other parameters.
+     */
+    public Map<String, String> getOther() {
+        return other;
+    }
+
+    /**
+     * Sets the other parameters.
+     *
+     * @param other the other parameters.
+     */
+    public void setOther(Map<String, String> other) {
+        this.other = other;
+    }
+
+    /**
+     * Gets the manifest.
+     *
+     * @return the manifest.
+     */
+    public Map<String, String> getManifest() {
+        return manifest;
+    }
+
+    /**
+     * Sets the manifest.
+     *
+     * @param manifest the manifest.
+     */
+    public void setManifest(Map<String, String> manifest) {
+        this.manifest = manifest;
+    }
+
 }

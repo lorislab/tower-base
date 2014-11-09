@@ -99,8 +99,8 @@ public final class ServerClient {
         Request request = createRequest(key, version);
         Result result = service.install(request);
         if (result != null) {
-            if (result.status == null || result.status.equals(Status.ERROR)) {
-                throw new Exception("Could not install the build for the application: " + result.message);
+            if (result.getStatus() == null || result.getStatus().equals(Status.ERROR)) {
+                throw new Exception("Could not install the build for the application: " + result.getMessage());
             }
         }
     }
@@ -122,8 +122,8 @@ public final class ServerClient {
         Request request = createRequest(key, version);
         Result result = service.deploy(request);
         if (result != null) {
-            if (result.status == null || result.status.equals(Status.ERROR)) {
-                throw new Exception("Could not deploy the build for the system: " + result.message);
+            if (result.getStatus() == null || result.getStatus().equals(Status.ERROR)) {
+                throw new Exception("Could not deploy the build for the system: " + result.getMessage());
             }
         }
     }
@@ -137,8 +137,8 @@ public final class ServerClient {
      */
     private static Request createRequest(String key, Version version) {
         Request request = new Request();
-        request.version = version;
-        request.key = key;
+        request.setVersion(version);
+        request.setKey(key);
         return request;
     }
 }
