@@ -16,15 +16,9 @@
 package org.lorislab.tower.base.server.client;
 
 import java.net.URL;
-import org.apache.http.auth.AuthScope;
-import org.apache.http.auth.Credentials;
-import org.apache.http.auth.UsernamePasswordCredentials;
-import org.apache.http.impl.client.BasicCredentialsProvider;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.jboss.resteasy.client.ClientExecutor;
-import org.jboss.resteasy.client.ClientRequest;
-import org.jboss.resteasy.client.ProxyFactory;
-import org.jboss.resteasy.client.core.executors.ApacheHttpClient4Executor;
+import org.jboss.resteasy.client.jaxrs.ResteasyClient;
+import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
+import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
 import org.jboss.resteasy.plugins.providers.RegisterBuiltin;
 import org.jboss.resteasy.spi.ResteasyProviderFactory;
 import org.lorislab.tower.base.dto.model.Request;
@@ -43,7 +37,7 @@ public final class ServerClient {
     /**
      * The agent monitor URL.
      */
-    private static final String APP_URL = "tower-rs/service";
+    private static final String APP_URL = "tower-rs";
 
     /**
      * The default constructor.
@@ -68,18 +62,13 @@ public final class ServerClient {
         if (!tmp.endsWith("/")) {
             tmp = tmp + "/";
         }
-        tmp = tmp + APP_URL;
-
-        ClientExecutor executor = ClientRequest.getDefaultExecutor();
+        tmp = tmp + APP_URL;        
+        ResteasyClient client = new ResteasyClientBuilder().build();
         if (auth) {
-            Credentials credentials = new UsernamePasswordCredentials(username, password);
-            DefaultHttpClient httpClient = new DefaultHttpClient();
-            BasicCredentialsProvider provider = new BasicCredentialsProvider();
-            provider.setCredentials(AuthScope.ANY, credentials);
-            httpClient.setCredentialsProvider(provider);
-            executor = new ApacheHttpClient4Executor(httpClient);
+            client.register(new BasicAuthenticator(username, password));
         }
-        return ProxyFactory.create(ServerService.class, tmp, executor);
+        ResteasyWebTarget target = client.target(tmp);
+        return target.proxy(ServerService.class);
     }
 
     /**
