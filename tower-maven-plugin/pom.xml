@@ -36,6 +36,11 @@
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-client</artifactId>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-jackson-provider</artifactId>
+            <scope>compile</scope>
         </dependency>	
         <!-- MAVEN -->	
         <dependency>

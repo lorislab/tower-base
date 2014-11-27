@@ -43,7 +43,7 @@ public class BasicAuthenticator implements ClientRequestFilter {
     public BasicAuthenticator(String user, String password) {
         String tmp = user + ":" + password;
         try {
-            token = "BASIC " + DatatypeConverter.printBase64Binary(tmp.getBytes("UTF-8"));
+            token = "Basic " + DatatypeConverter.printBase64Binary(tmp.getBytes("UTF-8"));
         } catch (UnsupportedEncodingException ex) {
             throw new IllegalStateException("Cannot encode with UTF-8", ex);
         }

@@ -137,9 +137,9 @@ public abstract class AbstractMonitorMojo extends AbstractMojo {
         String tmp = deployFile + "." + extension;
         if (exDeployFile != null && !exDeployFile.isEmpty()) {
             tmp = exDeployFile;
-            getLog().info("Deploy the external file: " + tmp);
+            getLog().info("External file: " + tmp);
         } else {
-            getLog().info("Deploy the current build file: " + tmp);
+            getLog().info("Current build file: " + tmp);
         }
         File file = new File(tmp);
         if (file.exists()) {
